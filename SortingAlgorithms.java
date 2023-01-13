@@ -24,7 +24,7 @@ public class SortingAlgorithms {
             int temp = intList.get(i);
             intList.set(i, intList.get(smallestNumIdx));
             intList.set(smallestNumIdx, temp);
-            //System.out.println(intList);
+            // System.out.println(intList);
         }
 
         return intList;
@@ -38,25 +38,12 @@ public class SortingAlgorithms {
      */
     public static ArrayList<Integer> insertionSortInt(ArrayList<Integer> intList) {
         /* your code goes here */
-        for (int i = 1; i < intList.size(); i++) {
+        for (int i = 1; i < intList.size(); ++i) {
             int currentElem = intList.get(i);
-            //System.out.printf("i: %d\n", i);
-            for (int j = i - 1; j >= 0; j--) {
-                if (intList.get(j) > currentElem && j != 0) {
-                    intList.set(j + 1, intList.get(j));
-                } else {
-                    if (j == 0 && intList.get(j) > currentElem) {
-                        intList.set(j + 1, intList.get(j));
-                        intList.set(j, currentElem);
-                    } else {
-                        intList.set(j + 1, currentElem);
-                    }
-                    break;
-                }
-                //System.out.printf("j: %d ", j);
-                //System.out.println(intList);
-            }
-            //System.out.println();
+            int j;
+            for (j = i - 1; j >= 0 && intList.get(j) > currentElem; j--)
+                intList.set(j + 1, intList.get(j));
+            intList.set(j + 1, currentElem);
         }
 
         return intList;
@@ -81,7 +68,7 @@ public class SortingAlgorithms {
             double temp = doubleList.get(i);
             doubleList.set(i, doubleList.get(smallestNumIdx));
             doubleList.set(smallestNumIdx, temp);
-            //System.out.println(intList);
+            // System.out.println(intList);
         }
 
         return doubleList;
@@ -95,26 +82,12 @@ public class SortingAlgorithms {
      */
     public static ArrayList<Double> insertionSortDouble(ArrayList<Double> doubleList) {
         /* your code goes here */
-        /* your code goes here */
-        for (int i = 1; i < doubleList.size(); i++) {
+        for (int i = 1; i < doubleList.size(); ++i) {
             double currentElem = doubleList.get(i);
-            //System.out.printf("i: %d\n", i);
-            for (int j = i - 1; j >= 0; j--) {
-                if (doubleList.get(j) > currentElem && j != 0) {
-                    doubleList.set(j + 1, doubleList.get(j));
-                } else {
-                    if (j == 0 && doubleList.get(j) > currentElem) {
-                        doubleList.set(j + 1, doubleList.get(j));
-                        doubleList.set(j, currentElem);
-                    } else {
-                        doubleList.set(j + 1, currentElem);
-                    }
-                    break;
-                }
-                //System.out.printf("j: %d ", j);
-                //System.out.println(doubleList);
-            }
-            //System.out.println();
+            int j;
+            for (j = i - 1; j >= 0 && doubleList.get(j) > currentElem; j--)
+                doubleList.set(j + 1, doubleList.get(j));
+            doubleList.set(j + 1, currentElem);
         }
 
         return doubleList;
